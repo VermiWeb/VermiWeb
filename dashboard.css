@@ -1,0 +1,189 @@
+/* DASHBOARD */
+body {
+  font-family: 'Mulish', sans-serif;
+  background-image: url(images/dashboardbackground.jpg);
+  background-size: cover;
+  overflow-x: hidden;
+  text-decoration: none;
+}
+
+.logo-style { /* Navbar Logo */
+  margin-top: -6%;
+  margin-left: 20px;
+  width: 20%;
+}
+
+.navbar-brand { /* Navbar Name */
+  margin-top: 8%;
+  font-weight: 700;
+  font-size: 40px;
+  padding-top: 2%;
+  color: #F7FFF2;
+}
+
+.hello-text{ /* Welcome Back Text */
+  margin-top: 50px;
+  color: #284D17;
+  font-weight: 700;
+  font-size: 35px;
+  text-align: center;
+}
+
+.tab-one{ /* Dashboard Navbar Name */
+  margin-top: 10%;
+}
+
+ul { /* Vertical Navbar Design */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #5AB862;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a { /* Vertical Navbar Design Each*/
+  display: block;
+  color: #F7FFF2;
+  padding: 20px 16px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+li a.active { /* Vertical Navbar Design Each when Active */
+  background-color: #F7FFF2;
+  color: #284D17;
+}
+
+li a:hover:not(.active) { /* Vertical Navbar Design Each when not Active */
+  background-color: #F7FFF2;
+  color: #284D17;
+}
+
+.dropdown-style{ /* Notification Bell Icon */
+  position: absolute;
+  top: 5%;
+  right: 1%;
+  color: #3A6E21;
+  font-size: 35px;
+  height: 52px;
+}
+
+.dropdown-style:hover { /* Notification Bell Icon when in hover */
+  color: #9E5218;
+}
+
+.menu-style { /* Notification Box Design */
+  background-color: #F7FFF2;
+}
+
+.dropdown-item { /*Notification Box Text Design */
+  font-weight: 600;
+  color: #3A6E21;
+  font-size: 20px;
+}
+
+.date-notif{ /* Date Notification */
+  text-align: left;
+  margin-left: 10px;
+}
+
+.notif-message{ /* Notidication Message */
+  width: 500px;
+}
+
+.tabcontent { /* The content of each tab */
+  position: absolute;
+  padding: 0px 12px;
+  width: 70%;
+  border-left: none;
+  margin-left: 28%;
+}
+
+.card{ /* The card of dashboard contents */
+  margin-top: 1.5%;
+  border-radius: 10px;
+}
+
+.dashboard-text{ /* Dashboard Top Name */
+  margin-top: 5.5%;
+  margin-bottom: 9%;
+  font-weight: 700;
+  color: #F7FFF2;
+}
+
+.weight-img,.soil-img,.temp-img{ /*Images per Sensor */
+  width: 80%;
+  margin: 15px auto;
+}
+
+.card-title,.card-text{ /* Card Title and Card Text Design */
+  text-align: center;
+}
+
+.card-title{ /* Card Title Design */
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.card-text{ /* Card Text Design */
+  margin-top: 10%;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+td, th {
+  border: 5px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  width: 30%;
+}
+
+@media (max-width: 1024px) {
+  .navbar-brand { /* Navbar Name */
+    font-size: 30px;
+  }
+
+  .hello-text{
+    font-size: 30px;
+  }
+
+  .dropdown-style{ /* Notification Bell Icon */
+    position: absolute;
+    top: 3%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand{
+    font-size: 20px;
+  }
+
+  .dropdown-style{ /* Notification Bell Icon */
+    position: absolute;
+    font-size: 30px;
+    top: 1%;
+  }
+
+  .card-title{
+    font-size: 15px;
+  }
+
+  .card-text{
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 425px) {
+  body{
+    background-size: contain;
+  }
+
+  .card{
+    height: 50px;
+  }
+}

@@ -86,7 +86,7 @@
 <?php
 
 // Connect to database
-$serverName = "LAPTOP-GBO9I3B3\SQL";
+$serverName = "TEPANYANG\SQLEXPRESS"; //TEPANYANG\SQLEXPRESS or LAPTOP-GBO9I3B3\SQL
 $connectionOptions = [
   "Database" => "DLSUD",
   "Uid" => "",

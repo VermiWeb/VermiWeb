@@ -2,7 +2,7 @@
 session_start(); // Call session_start() before any output is sent
 
 // Connect to the database
-$serverName = "LAPTOP-GBO9I3B3\SQL";
+$serverName = "TEPANYANG\SQLEXPRESS"; //TEPANYANG\SQLEXPRESS or LAPTOP-GBO9I3B3\SQL
 $connectionOptions = [
     "Database" => "DLSUD",
     "Uid" => "",

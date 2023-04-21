@@ -1,3 +1,45 @@
+<?php
+
+// Connect to database
+$serverName = "TEPANYANG\SQLEXPRESS"; //TEPANYANG\SQLEXPRESS or LAPTOP-GBO9I3B3\SQL
+$connectionOptions = [
+  "Database" => "DLSUD",
+  "Uid" => "",
+  "PWD" => ""
+];
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+// Check the connection
+if (!$conn) {
+  die("Connection failed: " . sqlsrv_errors());
+}
+
+
+//Variable to hold the values
+// -tiff fixed this code to remove error message when the page is accessed the first time
+$email = isset($_POST['email']) ? $_POST['email']: "Email is required";
+$username = isset($_POST['username']) ? $_POST['username']: "Username is required";
+$userpassword =  isset($_POST['userpassword']) ? $_POST['userpassword']: "Password is required";
+
+
+
+//Check if the time in button is pressed
+if(isset($_POST['regsub'])){
+
+  // Insert date and time values into database
+  $sql ="INSERT INTO VERMI_USER(USER_EMAIL, USER_NAME, USER_PASSWORD) VALUES ('$email', '$username' , '$userpassword')";
+ 
+  $stmt = sqlsrv_query($conn, $sql);
+  if ($stmt) {  
+    echo '<script>alert("Sign-up Successful!")</script>';
+    exit();
+  }
+  else {
+    echo "Error ";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -81,45 +123,3 @@
 </body>
 
 </html>
-
-
-<?php
-
-// Connect to database
-$serverName = "TEPANYANG\SQLEXPRESS"; //TEPANYANG\SQLEXPRESS or LAPTOP-GBO9I3B3\SQL
-$connectionOptions = [
-  "Database" => "DLSUD",
-  "Uid" => "",
-  "PWD" => ""
-];
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-
-// Check the connection
-if (!$conn) {
-  die("Connection failed: " . sqlsrv_errors());
-}
-
-
-//Variable to hold the values
-$email = $_POST['email'];
-$username = $_POST['username'];
-$userpassword =  $_POST['userpassword'];
-
-
-
-//Check if the time in button is pressed
-if(isset($_POST['regsub'])){
-
-  // Insert date and time values into database
-  $sql ="INSERT INTO VERMI_USER(EMAIL, USER_NAME, USER_PASSWORD) VALUES ('$email', '$username' , '$userpassword')";
- 
-  $stmt = sqlsrv_query($conn, $sql);
-  if ($stmt) {  
-    echo '<script>alert("Sign-up Successful!")</script>';
-    exit();
-  }
-  else {
-    echo "Error ";
-  }
-}
-?>

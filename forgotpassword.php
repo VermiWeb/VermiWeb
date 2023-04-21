@@ -1,4 +1,6 @@
-  <!DOCTYPE html>
+<?php require_once 'controllers/authController.php'?>
+
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -43,7 +45,7 @@
       <div class="col-lg-6 col-m-12 col-sm-12 left-side">
         <h1 class="welcome-text">Forgot Password</h1>
         <p class="description-text">No worries. We'll send you the recovery instructions.</p>
-        <form class="" action="forgotpasswordsuccess.html" method="post">
+        <form class="" action="forgot_password.php" method="post">
           <label for="" class="email-label">Email:</label><br>
           <input type="text" name="username" placeholder="Enter your Email"><br>
           <a href="forgotpasswordsuccess.html"><button class="signin-button">Send</button></a>

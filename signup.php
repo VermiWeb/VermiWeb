@@ -32,6 +32,7 @@ if(isset($_POST['regsub'])){
   $stmt = sqlsrv_query($conn, $sql);
   if ($stmt) {  
     echo '<script>alert("Sign-up Successful!")</script>';
+    // -tiff added a script to redirect the user to login page after signing up
     echo "<script>window.location.href='loginpage.php'</script>";
     
   }

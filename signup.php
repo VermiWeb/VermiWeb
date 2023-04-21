@@ -32,7 +32,8 @@ if(isset($_POST['regsub'])){
   $stmt = sqlsrv_query($conn, $sql);
   if ($stmt) {  
     echo '<script>alert("Sign-up Successful!")</script>';
-    exit();
+    echo "<script>window.location.href='loginpage.php'</script>";
+    
   }
   else {
     echo "Error ";

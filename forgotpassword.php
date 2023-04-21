@@ -45,7 +45,7 @@
         <p class="description-text">No worries. We'll send you the recovery instructions.</p>
         <form class="" action="forgotpasswordsuccess.html" method="post">
           <label for="" class="email-label">Email:</label><br>
-          <input type="text" name="username" placeholder="Enter your Username"><br>
+          <input type="text" name="username" placeholder="Enter your Email"><br>
           <a href="forgotpasswordsuccess.html"><button class="signin-button">Send</button></a>
           <p>Do you have an account? <a href="signup.html" class="signup-text">Sign Up</a></p>
         </form>

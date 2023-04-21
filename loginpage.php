@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
           <input type="password"  id="password" name="password" placeholder="Enter your Password" class="password-box"><br>
           
-          <a  class="forgot-text">Forgot Password</a><br>   <!--DAT DITO YUNG FORGOT PASSWORD NA PHP FILE-->
+          <a href="forgotpassword.php" class="forgot-text">Forgot Password</a><br>   <!--DAT DITO YUNG FORGOT PASSWORD NA PHP FILE-->
 
 
           

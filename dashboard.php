@@ -47,21 +47,21 @@
       </div>
 
       <div class="card-deck">
-        <div class="card">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
           <img class="card-img-top weight-img" src="images/weight.png" alt="weight.png">
           <div class="card-body">
             <h5 class="card-title">WEIGHT</h5>
             <p class="card-text">100kg</p>
           </div>
         </div>
-        <div class="card">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
           <img class="card-img-top soil-img" src="images/soil.png" alt="soilmoisture.png">
           <div class="card-body">
             <h5 class="card-title">SOIL MOISTURE</h5>
             <p class="card-text">70%</p>
           </div>
         </div>
-        <div class="card">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
           <img class="card-img-top temp-img" src="images/temperature.png" alt="temperature.png">
           <div class="card-body">
             <h5 class="card-title">TEMPERATURE</h5>

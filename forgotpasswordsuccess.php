@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <title>Forgot Password</title>
+  <title>VermiWeb</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!--BOOTSTRAP-->
@@ -41,19 +41,14 @@
     </nav>
     <div class="row">
       <div class="col-lg-6 col-m-12 col-sm-12 left-side">
-        <h1 class="welcome-text">Recover your Password</h1>
-        <p class="description-text">No worries. We'll send you the recovery instructions.</p>
-
-        <form class="" action="passwordresetcode.php" method="post">
-          <label for="" name="email-label" class="email-label">Email:</label><br>
-          <input type="text" name="username" placeholder="Enter your Email"><br>
-          <button type="submit" name="signin-button" class="signin-button">Send</button></a>
-          <p>Do you have an account? <a href="signup.html" class="signup-text">Sign Up</a></p>
-        </form>
+        <h1 class="welcome-text">Check your Email</h1>
+        <p class="description-text">We sent a password reset instructions on your email.</p>
+        <p>Go back to <a href="loginpage.html" class="signup-text">Login</a></p>
+        <p>Do you have an account? <a href="signup.html" class="signup-text">Sign Up</a></p>
       </div>
       <div class="col-lg-6 col-m-12 col-sm-12">
         <div>
-          <img class="vermi-img" src="images/reset-password.png" alt="reset-password.png">
+          <img class="vermi-img" src="images/forgot-success.png" alt="vermicomposting.png">
         </div>
       </div>
     </div>

@@ -29,7 +29,12 @@
       <li class="tab-one"><a class="active" href="dashboard.php">Dashboard</a></li>
       <li><a href="history.php">History</a></li>
       <li><a href="profile.php">My Profile</a></li>
-      <li><a href="loginpage.php">Logout</a></li>
+      <li><a href="javascript:reportpageFunction()">Logout</a></li>
+      <script>
+        function reportpageFunction(){
+          window.location.href="logout.php";
+        }
+      </script>
     </ul>
 
     <div id="Dashboard" class="tabcontent">

@@ -57,6 +57,7 @@ li a { /* Vertical Navbar Design Each*/
 li a.active { /* Vertical Navbar Design Each when Active */
   background-color: #F7FFF2;
   color: #284D17;
+  text-decoration: underline;
 }
 
 li a:hover:not(.active) { /* Vertical Navbar Design Each when not Active */

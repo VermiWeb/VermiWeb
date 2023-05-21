@@ -41,14 +41,12 @@
     </nav>
     <div class="row">
       <div class="col-lg-6 col-m-12 col-sm-12 left-side">
-        <h1 class="welcome-text">Recover your Password</h1>
-        <p class="description-text">No worries. We'll send you the recovery instructions.</p>
+        <h1 class="welcome-text">Change your Password</h1>
 
-        <form class="" action="passwordresetcode.php" method="post">
-          <label for="" name="email-label" class="email-label">Email:</label><br>
-          <input type="text" name="username" placeholder="Enter your Email"><br>
+        <form class="" action="loginpage.php" method="post">
+          <label for="" name="email-label" class="email-label">New Password: </label><br>
+          <input type="text" name="username" placeholder="Enter your New Password"><br>
           <button type="submit" name="signin-button" class="signin-button">Send</button></a>
-          <p>Do you have an account? <a href="signup.html" class="signup-text">Sign Up</a></p>
         </form>
       </div>
       <div class="col-lg-6 col-m-12 col-sm-12">

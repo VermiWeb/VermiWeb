@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $form_id_log = isset($_POST["username"]) ? $_POST["username"] : '';
     $user_pass_log = isset($_POST["password"]) ? $_POST["password"] : '';
     // Select the FORM_ID and USER_PASSWORD from the users table
-    $sql = "SELECT USER_NAME, USER_PASSWORD FROM VERMI_USER WHERE USER_NAME=? AND USER_PASSWORD=?";
+    $sql = "SELECT USER_NAME, USER_PASS FROM VERMI_WEB WHERE USER_NAME=? AND USER_PASS=?";
     $params = array($form_id_log, $user_pass_log);
     $result = sqlsrv_query($conn, $sql, $params);
     // Fetch the data from the database
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: dashboard.php");
         exit();
     } else {
-        $loginerr ="Invalid Username/Password.";
+        $loginerr ='<span style="color:red;">Invalid Username/Password.</span>';
     }
 }
 ?>
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
   <!--ICONS-->
-  <script src="https://kit.fontawesome.com/0dbdcb52b2.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/8506767b90.js" crossorigin="anonymous"></script>
   <!--GOOGLE FONTS-->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!--CSS FILE-->
@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
           <input type="password"  id="password" name="password" placeholder="Enter your Password" class="password-box"><br>
           
-          <!-- <a href="forgotpassword.php" class="forgot-text">Forgot Password</a><br>   DAT DITO YUNG FORGOT PASSWORD NA PHP FILE -->
+          <a href="forgotpassword.php" class="forgot-text">Forgot Password</a><br>
 
 
           

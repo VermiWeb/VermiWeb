@@ -27,7 +27,7 @@ $userpassword =  isset($_POST['userpassword']) ? $_POST['userpassword']: "Passwo
 if(isset($_POST['regsub'])){
 
   // Insert date and time values into database
-  $sql ="INSERT INTO VERMI_USER(USER_EMAIL, USER_NAME, USER_PASSWORD) VALUES ('$email', '$username' , '$userpassword')";
+  $sql ="INSERT INTO VERMI_WEB(USER_EMAIL, USER_NAME, USER_PASS) VALUES ('$email', '$username' , '$userpassword')";
  
   $stmt = sqlsrv_query($conn, $sql);
   if ($stmt) {  

@@ -20,6 +20,8 @@ if (!$conn) {
 $email = isset($_POST['email']) ? $_POST['email']: "Email is required";
 $username = isset($_POST['username']) ? $_POST['username']: "Username is required";
 $userpassword =  isset($_POST['userpassword']) ? $_POST['userpassword']: "Password is required";
+$name = isset($_POST['name']) ? $_POST['name']: "Name is required";
+$phone = isset($_POST['phone']) ? $_POST['phone']: "Phone is required";
 
 
 
@@ -27,7 +29,7 @@ $userpassword =  isset($_POST['userpassword']) ? $_POST['userpassword']: "Passwo
 if(isset($_POST['regsub'])){
 
   // Insert date and time values into database
-  $sql ="INSERT INTO VERMI_WEB(USER_EMAIL, USER_NAME, USER_PASS) VALUES ('$email', '$username' , '$userpassword')";
+  $sql ="INSERT INTO VERMI_WEB(USER_EMAIL, USER_NAME, USER_PASS, NAME, USER_PHONE) VALUES ('$email', '$username' , '$userpassword', '$name', '$phone')";
  
   $stmt = sqlsrv_query($conn, $sql);
   if ($stmt) {  
@@ -40,6 +42,7 @@ if(isset($_POST['regsub'])){
     echo "Error ";
   }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -89,30 +92,28 @@ if(isset($_POST['regsub'])){
 
         <form id="registration"  class= "" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
 
+          <label for="" class="name-label">Name:</label><br>
+          <input type="text" id="name" name="name" placeholder="Enter your Name" required><br>
+
+          <label for="" class="phone-label">Phone:</label><br>
+          <input type="text" id="phone" name="phone" placeholder="Enter your Phone Number" required><br>
+
           <label for="" class="email-label" >Email:</label><br>
           <input type="text" id= "email" name="email" placeholder="Enter your Email" required><br>
 
-          <label for="" class="name-label">Username:</label><br>
+          <label for="" class="username-label">Username:</label><br>
           <input type="text" id= "username" name="username" placeholder="Enter your Username" required><br>
 
           <label for="" class="password-label">Password:</label><br>
           <input type="password" id= "userpassword" name="userpassword" placeholder="Enter your Password" required class="password-box"><br>
 
-         
-
           <button type="submit" id="regsub" name="regsub" class="signin-button">Sign Up</button></a>
-         
-   
-
-
+        
           <p>Go back to <a href="loginpage.php" class="signup-text">Login</a></p>
 
         </form>
-
-
-
-
       </div>
+      
       <div class="col-lg-6 col-m-12 col-sm-12">
         <div>
           <img class="vermi-img" src="images/mainpageimage.png" alt="vermicomposting.png">

@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -44,12 +51,76 @@
         <h1 class="welcome-text">Recover your Password</h1>
         <p class="description-text">No worries. We'll send you the recovery instructions.</p>
 
-        <form class="" action="passwordresetcode.php" method="post">
-          <label for="" name="email-label" class="email-label">Email:</label><br>
-          <input type="text" name="username" placeholder="Enter your Email"><br>
-          <button type="submit" name="signin-button" class="signin-button">Send</button></a>
-          <p>Do you have an account? <a href="signup.html" class="signup-text">Sign Up</a></p>
-        </form>
+        <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+
+    <label for="email" class="email-label">Email:</label><br>
+    <input type="text" id="email" name="email" placeholder="Enter your Email"><br>
+
+    <label for="password" class="password-label">New Password:</label><br>
+    <input type="password" id="password" name="password" placeholder="Enter your New Password"><br>
+
+    <label for="password2" class="password2-label">Re-type Password:</label><br>
+    <input type="password" id="password2" name="password2" placeholder="Re-type your Password"><br>
+
+    <button type="submit" name="signin-button" class="signin-button">Submit</button></a>
+    <p>Do you have an account? <a href="signup.html" class="signup-text">Sign Up</a></p>
+</form>
+
+      <?php
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          $email = isset($_POST['email']) ? $_POST['email'] : "";
+          $password = isset($_POST['password']) ? $_POST['password'] : "";
+          $password2 = isset($_POST['password2']) ? $_POST['password2'] : "";
+
+          if ($password == $password2) {
+              $serverName = "TEPANYANG\\SQLEXPRESS";
+              $connectionOptions = [
+                  "Database" => "DLSUD",
+                  "Uid" => "",
+                  "PWD" => ""
+              ];
+              $conn = sqlsrv_connect($serverName, $connectionOptions);
+
+              if (!$conn) {
+                  die("Connection failed: " . print_r(sqlsrv_errors(), true));
+              }
+
+              $useridstr = $email;
+              $passwordhash = $password;
+
+              // Check if the email exists in the database
+              $sqlCheckEmail = "SELECT * FROM VERMI_WEB WHERE USER_EMAIL='$useridstr'";
+              $emailResult = sqlsrv_query($conn, $sqlCheckEmail);
+
+              if ($emailResult === false) {
+                  die("Email query failed: " . print_r(sqlsrv_errors(), true));
+              }
+
+              if (sqlsrv_has_rows($emailResult)) {
+                  // Update the password if the email exists
+                  $sqlUpdatePassword = "UPDATE VERMI_WEB SET USER_PASS='$passwordhash' WHERE USER_EMAIL='$useridstr'";
+                  $updateResult = sqlsrv_query($conn, $sqlUpdatePassword);
+
+                  if ($updateResult === false) {
+                      die("Update query failed: " . print_r(sqlsrv_errors(), true));
+                  }
+
+                  if (sqlsrv_rows_affected($updateResult) > 0) {
+                      echo '<script>alert("Reset Successful!")</script>';
+                      echo "<script>window.location.href='loginpage.php'</script>";
+                  } else {
+                      echo "Error updating password.";
+                  }
+              } else {
+                  echo "Email does not exist.";
+              }
+          } else {
+              echo 'Password did not match.';
+          }
+      }
+      ?>
+
+
       </div>
       <div class="col-lg-6 col-m-12 col-sm-12">
         <div>

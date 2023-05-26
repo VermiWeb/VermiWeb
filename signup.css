@@ -65,7 +65,7 @@ a:hover {
 
 .left-side {
   text-align: center;
-  margin-top: 8%;
+  margin-top: 7%;
 }
 
 .welcome-text, .description-text {
@@ -80,18 +80,17 @@ a:hover {
   margin-bottom: 3%;
 }
 
-.name-label {
-  font-weight: 700;
-  color: #3A6E21;
-  padding-right: 40%;
-  padding-top: 2%;
-  margin-bottom: 0px;
-}
-
-.email-label{
+.name-label, .email-label, .phone-label{
   font-weight: 700;
   color: #3A6E21;
   padding-right: 45%;
+  margin-bottom: 0px;
+}
+
+.username-label, .password-label{
+  font-weight: 700;
+  color: #3A6E21;
+  padding-right: 40%;
   margin-bottom: 0px;
 }
 
@@ -108,14 +107,6 @@ input, .signin-button {
   color: #F7FFF2;
   margin-top: 2%;
   margin-bottom: 3%;
-}
-
-.password-label {
-  font-weight: 700;
-  color: #3A6E21;
-  padding-right: 40%;
-  padding-top: 2%;
-  margin-bottom: 0px;
 }
 
 .confirmpassword-label{

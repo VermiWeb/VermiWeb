@@ -1,6 +1,0 @@
-{
-    "name": "vermiteam/vermiweb",
-    "require": {
-        "phpmailer/phpmailer": "^6.8"
-    }
-}

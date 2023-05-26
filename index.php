@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <!--DAS-->
-
 <head>
   <meta charset="utf-8">
   <title>VermiWeb</title>
@@ -24,7 +22,7 @@
   <section id="title">
     <!--NAV BAR-->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark navbar-style">
-      <img src="images/vmwlogo.png" alt="logo.png" class="logo-style"><a href="index.html" class="navbar-brand">VermiWeb</a>
+      <img src="images/vmwlogo.png" alt="logo.png" class="logo-style"><a href="index.php" class="navbar-brand">VermiWeb</a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

@@ -30,16 +30,12 @@ if ($row = sqlsrv_fetch_array($results, SQLSRV_FETCH_ASSOC)) {
   $username = $row['USER_NAME'];
   $email = $row['USER_EMAIL'];
   $phone = $row['USER_PHONE'];
-  $initial = $row['INITIAL_WEIGHT'];
-  $final = $row['FINAL_WEIGHT'];
 } else {
   $userid = 'Unknown';
   $name = 'Unknown';
   $username = 'Unknown';
   $email = 'Unknown';
   $phone = 'Unknown';
-  $initial = 'Unknown';
-  $final = 'Unknown';
 }
 ?>
 
@@ -69,7 +65,7 @@ if ($row = sqlsrv_fetch_array($results, SQLSRV_FETCH_ASSOC)) {
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Mulish:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <!--CSS FILE-->
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="editprofile.css">
 </head>
 
 <body>
@@ -93,22 +89,8 @@ if ($row = sqlsrv_fetch_array($results, SQLSRV_FETCH_ASSOC)) {
         </ul>
 
         <div id="History" class="tabcontent">
-            <div class="row">
-            <div class="col-md-6 div-dashboard">
             <h3 class="dashboard-text">MY PROFILE</h3>
-            </div>
-            <div class="col-md-6 div-dropdown">
-            <a class="nav-link dropdown-style" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa-solid fa-solid fa-bell bars-style"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right text-right menu-style" aria-labelledby="navbarDropdownMenuLink">
-            <table>
-                <h4 class="date-notif">Today</h4>
-                <th class="notif-message">Your Compost is ready for harvest!</th>
-            </table>
-            </div>
-            </div>
-        </div>
+
             <div class="profile-row">
                 <div class="row info-row">
                     <table>
@@ -144,11 +126,58 @@ if ($row = sqlsrv_fetch_array($results, SQLSRV_FETCH_ASSOC)) {
             </div>
 
             <div class="row">
-                <h5 class="initial-weight">INITIAL WEIGHT: </h5>
-                <p class="initialweight-values"><?php echo $initial?>kg</p>
+                <h5 class="initial-weight">INITIAL WEIGHT:</h5>
+                <form class="initial-box" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                  <input type="text" id="initialall" name="initialall" placeholder="Initial Overall Weight">
+                  <input type="text" id="initialworm" name="initialworm" placeholder="Initial Worm Weight">
+                  <button class="submit-edit" type="submit" id="submit-edit" name="submit-edit">Submit</button><br>
+                </form>
+
+                <?php
+                $serverName = "TEPANYANG\SQLEXPRESS";
+                $connectionOptions = [
+                    "Database" => "DLSUD",
+                    "Uid" => "",
+                    "PWD" => ""
+                ];
+                $conn = sqlsrv_connect($serverName, $connectionOptions);
+  
+                if (!$conn) {
+                    die("Connection failed: " . print_r(sqlsrv_errors(), true));
+                }
+
+                if($_SERVER["REQUEST_METHOD"] === "POST"){
+                  $initialall = $_POST['initialall'];
+                  $initialworm = $_POST['initialworm'];
+
+                  $sqlfinal = "UPDATE VERMI_WEB SET INITIAL_WEIGHT=$initialall, FINAL_WEIGHT=(SELECT ($initialall-(((0.75*$initialworm)*7.5))) FROM VERMI_WEB) FROM VERMI_WEB";
+                  $results = sqlsrv_query($conn,$sqlfinal);
+
+                  if($results){
+                    echo "<script>alert('Successfully Updated!')</script>";
+                    echo "<script>window.location.href='profile.php'</script>";
+                  }
+                  else{
+                    echo "Error.";
+                  }
+                }
+
+                $query = "SELECT * FROM VERMI_WEB WHERE USER_NAME='$form_id_log'";
+                $result = sqlsrv_query($conn, $query);
+                if ($result === false) {
+                  die(print_r(sqlsrv_errors(), true));
+                }
+
+                if ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
+                  $final = $row['FINAL_WEIGHT'];
+                } else {
+                  $final = 'Unknown';
+                }
+                ?>
             </div>
             <div class="row">
                 <h5 class="final-weight">EXPECTED FINAL WEIGHT: </h5>
+
                 <p class="finalweight-values"><?php echo $final?>kg</p>
             </div>
             <div class="row">
@@ -159,13 +188,6 @@ if ($row = sqlsrv_fetch_array($results, SQLSRV_FETCH_ASSOC)) {
                 <h5 class="optimal-temp">OPTIMAL TEMPERATURE CONTENT: </h5>
                 <p class="optimaltemp-values">15°C - 28°C</p>
             </div>
-
-            <button id="edit-button" type="button" class="btn btn-success edit-button">Edit Profile</button>
-            <script type="text/javascript">
-                document.getElementById("edit-button").onclick = function () {
-                    location.href = "editprofile.php";
-                };
-            </script>
         </div>
     </section>
 

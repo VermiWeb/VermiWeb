@@ -15,7 +15,7 @@
   <!--GOOGLE FONTS-->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!--CSS FILE-->
-  <link rel="stylesheet" href="homepage.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
 
     <!--TITLE SECTION-->
     <div class="row">
-      <div class="col-lg-6 col-m-12 col-sm-12">
+      <div class="col-lg-6 col-m-12 col-sm-12 title-texts">
         <div>
           <h1 class="title-description">Building a better future with Vermicomposting</h1>
           <p class="title-subdescription">Vermicomposting: Turning Trash into Treasure, One Worm at a Time.</p>
@@ -98,7 +98,7 @@
         <img class="about-image" src="images/about.png" alt="vermiteam.png">
       </div>
       <div class="col-lg-6">
-        <div>
+        <div class="about-div">
           <h1 class="about-header">About Us</h1>
           <p class="about-body">
             The researchers held that vermicomposting is a potent and long-lasting method of reducing waste and enhancing soil health. They contend that we may create nutrient-rich compost from our kitchen scraps and yard garbage by using worms to decompose organic materials. This compost can be utilized to feed gardens, farms, and other green places. By making a commitment to vermicomposting, we can not only cut down on the amount of garbage we send to landfills but also improve the quality of the environment for coming generations.
@@ -129,11 +129,13 @@
       </div>
       <div class="col-lg-6 col-m-12 col-sm-12 footer-right">
         <p class="footer-right-header">For Inquiries you may contact us at:</p>
-        <p><i class="fa-solid fa-envelope footer-envelope"></i>Samuelpastolero7@gmail.com</p>
-        <p><i class="fa-solid fa-phone footer-envelope"></i>+639456626398</p>
-        <a href="https://www.facebook.com/imhazeltaylo" class="fa fa-facebook foot-icon-left"></a>
-        <a href="https://www.twitter.com/imhazeltaylo" class="fa fa-twitter foot-icon-left"></a>
-        <a href="https://www.instagram.com/imhazeltaylo" class="fa fa-instagram foot-icon-left"></a>
+        <p class="footer-email"><i class="fa-solid fa-envelope footer-envelope"></i>Samuelpastolero7@gmail.com</p>
+        <p class="footer-number"><i class="fa-solid fa-phone footer-envelope"></i>+639456626398</p>
+        <div class="footer-icons">
+          <a href="https://www.facebook.com/imhazeltaylo" class="fa fa-facebook foot-icon-left"></a>
+          <a href="https://www.twitter.com/imhazeltaylo" class="fa fa-twitter foot-icon-left"></a>
+          <a href="https://www.instagram.com/imhazeltaylo" class="fa fa-instagram foot-icon-left"></a>
+        </div>
       </div>
     </div>
   </footer>

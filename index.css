@@ -1,0 +1,401 @@
+body {
+  font-family: 'Mulish', sans-serif;
+  overflow-x: hidden;
+}
+
+/*TITLE SECTION*/
+#title {
+  background-image: linear-gradient(#6AD973, #5AB862);
+  height: 100vh;
+}
+
+.navbar-style {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  background-color: #6AD973;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.logo-style {
+  width: 3%;
+}
+
+.navbar-brand {
+  color: #F7FFF2;
+  margin: 0;
+}
+
+.links {
+  color: white;
+  margin: 1rem;
+}
+
+.links-button {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1rem;
+  padding: 0.5rem 2rem;
+  color: white;
+}
+
+.title-description {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  color: white;
+  padding: 35% 0 0 25%;
+}
+
+.title-subdescription {
+  font-family: 'Mulish', sans-serif;
+  font-size: 1.1rem;
+  color: white;
+  padding-top: 2%;
+  padding-left: 25%;
+}
+
+.title-image {
+  width: 90%;
+  padding: 15% 0 15% 15%;
+}
+
+/*TESTIMONIALS-SECTION*/
+#testimonials {
+  background-color: #F7FFF2;
+  padding: 8% 14% 15px 14%;
+  text-align: center;
+}
+
+.testimonials-header {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #3A6E21;
+  margin-bottom: 50px;
+}
+
+.vermione-img {
+  float: left;
+  margin-right: 4%;
+  margin-bottom: 5%;
+  border-radius: 10px;
+  width: 500px;
+  height: 500px;
+}
+
+.testimonial-text {
+  margin-top: 5%;
+  font-size: 20px;
+  text-align: justify;
+  color: #3A6E21;
+}
+
+.testimonial-author {
+  text-align: left;
+  color: #B0B0B0;
+}
+
+.testimonial-texttwo {
+  margin-top: 10%;
+  font-size: 20px;
+  text-align: justify;
+  color: #3A6E21;
+}
+
+.testimonial-authortwo {
+  text-align: left;
+  color: #B0B0B0;
+}
+
+.carousel-control-prev:hover {
+  background-color: #B0B0B0;
+}
+
+.carousel-control-next:hover {
+  background-color: #B0B0B0;
+}
+
+/*ABOUT SECTION*/
+#about {
+  margin-top: 110px;
+}
+
+.about-image {
+  border-radius: 15px;
+  margin-left: 15%;
+  margin-bottom: 120px;
+  width: 600px;
+}
+
+.about-header {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #3A6E21;
+}
+
+.about-body {
+  text-align: justify;
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 8%;
+  color: #3A6E21;
+}
+
+/*FOOTER SECTION*/
+#footer {
+  background-color: #5AB862;
+  text-align: center;
+  padding: 3% 14%;
+  color: white;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-header {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.footer-logo {
+  width: 8%;
+  margin-bottom: 10px;
+}
+
+.footer-brand {
+  color: #F7FFF2;
+  font-size: 30px;
+}
+
+.footer-brand:hover {
+  text-decoration: none;
+  color: #9E5218;
+}
+
+.footer-body {
+  padding-right: 20%;
+}
+
+.foot-text {
+  margin-top: 20px;
+}
+
+.footer-right {
+  text-align: left;
+}
+
+.footer-right-header {
+  font-weight: 700;
+}
+
+.footer-envelope {
+  margin-right: 10px;
+}
+
+.foot-icon-left {
+  font-size: 19px;
+  margin-top: 8px;
+  padding-left: 50px;
+  color: #F7FFF2;
+}
+
+.foot-icon-left:hover {
+  text-decoration: none;
+  color: #9E5218;
+}
+
+/*VIEWPORTS*/
+@media (max-width: 1390px) {
+  .about-image{
+    width: 80%;
+    margin-top: 6%;
+  }
+}
+
+@media (max-width: 1241px) {
+  .title-image{
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .title-description {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: white;
+    padding: 40% 0 0 25%;
+  }
+
+  .title-image {
+    width: 90%;
+    padding: 30% 0 15% 15%;
+  }
+
+  #testimonials {
+    background-color: #F7FFF2;
+    padding: 10% 14% 15px 14%;
+    text-align: center;
+  }
+
+  .vermione-img {
+    float: left;
+    margin-right: 4%;
+    margin-bottom: 5%;
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .testimonial-text {
+    margin-top: 0px;
+    font-size: 20px;
+    text-align: justify;
+    color: #3A6E21;
+  }
+
+  .testimonial-texttwo {
+    margin-top: 0px;
+    font-size: 20px;
+    text-align: justify;
+    color: #3A6E21;
+  }
+
+  .about-image {
+    border-radius: 15px;
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-bottom: 120px;
+    width: 400px;
+    height: 400px;
+  }
+
+  .about-body {
+    text-align: justify;
+    font-size: 13px;
+    font-weight: 500;
+    margin-right: 8%;
+    color: #3A6E21;
+  }
+}
+
+@media (max-width: 993px) {
+  .logo-style{
+    width: 5%;
+  }
+  ul.navbar-nav.ml-auto {
+    text-align: right;
+  }
+}
+
+@media (max-width: 992px) {
+  .title-image{
+    display: none;
+  }
+  .title-texts{
+    padding: 0;
+    margin-top: 25%;
+    text-align: center;
+  }
+  .title-description{
+    padding: 0;
+  }
+  .title-subdescription{
+    padding: 0;
+  }
+  .about-image{
+    display: none;
+  }
+  .about-div{
+    margin-left: 25%;
+    margin-bottom: 10%;
+  }
+  .about-header, .about-body{
+    text-align: center;
+    width: 70%;
+  }
+  .footer-header, .footer-body, .foot-text, .footer-right-header, .footer-email, .footer-number, .footer-icons, .foot-icon-left{
+    text-align: center;
+    padding: 0;
+  }
+  .foot-icon-left{
+    padding: 10px;
+  }
+}
+
+@media (max-width: 820px) {
+  .title-texts{
+    margin: 30% auto;
+  }
+}
+
+@media (max-width: 770px) {
+  .logo-style{
+    width: 8%;
+  }
+  .title-texts{
+    margin: 35% auto;
+    width: 70%;
+  }
+  ul.navbar-nav.ml-auto {
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .title-description{
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .title-description, .title-subdescription{
+    width: 100%;
+    text-align: center;
+  }
+
+  .title-subdescription{
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 527px) {
+  .title-description{
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 522px) {
+  .vermione-img{
+    display: none;
+  }
+}
+
+@media (max-width: 426px) {
+  .title-texts{
+    margin-top: 50%;
+  }
+  .title-description{
+    font-size: 35px;
+  }
+  .testimonials-header{
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 377px) {
+  .footer-right-header, .foot-text{
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 349px) {
+  .title-description{
+    font-size: 30px;
+  }
+  .footer-email, .footer-number{
+    font-size: 12px;
+  }
+}

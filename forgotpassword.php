@@ -27,21 +27,24 @@ session_start();
 
 <body>
   <section id="title">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-style">
-      <img src="images/vmwlogo.png" alt="logo.png" class="logo-style"><a href="index.html" class="navbar-brand">VermiWeb</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark navbar-style">
+      <img src="images/vmwlogo.png" alt="logo.png" class="logo-style"><a href="index.php" class="navbar-brand">VermiWeb</a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse threebars-style" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-style" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa-solid fa-bars bars-style"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right text-right menu-style" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="index.html">Home<i class="fa-solid fa-house home-icon"></i></a>
-              <a class="dropdown-item" href="index.html#about">About Us<i class="fa-solid fa-user-group about-icon"></i></a>
-              <a class="dropdown-item" href="index.html#footer">Contact Us<i class="fa-solid fa-address-book contact-icon"></i></a>
-            </div>
+      <div class="navbar-collapse collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-list active">
+            <a class="nav-link links" href="index.php">Home</a>
+          </li>
+          <li class="nav-list active">
+            <a class="nav-link links" href="index.php#testimonials">Vermicomposting</a>
+          </li>
+          <li class="nav-list active">
+            <a class="nav-link links" href="index.php#about">About Us</a>
+          </li>
+          <li class="nav-list active">
+            <a class="nav-link links" href="index.php#footer">Contact Us</a>
           </li>
         </ul>
       </div>
@@ -63,7 +66,6 @@ session_start();
     <input type="password" id="password2" name="password2" placeholder="Re-type your Password"><br>
 
     <button type="submit" name="signin-button" class="signin-button">Submit</button></a>
-    <p>Do you have an account? <a href="signup.html" class="signup-text">Sign Up</a></p>
 </form>
 
       <?php
@@ -73,7 +75,7 @@ session_start();
           $password2 = isset($_POST['password2']) ? $_POST['password2'] : "";
 
           if ($password == $password2) {
-              $serverName = "TEPANYANG\\SQLEXPRESS";
+              $serverName = "TEPANYANG\SQLEXPRESS";
               $connectionOptions = [
                   "Database" => "DLSUD",
                   "Uid" => "",
@@ -112,15 +114,15 @@ session_start();
                       echo "Error updating password.";
                   }
               } else {
-                  echo "Email does not exist.";
+                  echo "<span style='color:red;'>Email does not exist.</span>";
               }
           } else {
               echo 'Password did not match.';
           }
       }
       ?>
-
-
+      <br>
+      <p>Do you have an account? <a href="signup.php" class="signup-text">Sign Up</a></p>
       </div>
       <div class="col-lg-6 col-m-12 col-sm-12">
         <div>

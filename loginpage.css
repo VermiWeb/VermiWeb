@@ -8,59 +8,47 @@ body {
   text-decoration: none;
 }
 
-.navbar-brand {
+a{
+  color: #3A6E21;
+}
+
+.navbar-style {
+  font-family: 'Mulish', sans-serif;
   font-weight: 700;
-  padding-top: 2%;
+  background-color: #5AB862;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.navbar-light .navbar-brand{
   color: #3A6E21;
 }
 
-.threebars-style {
-  position: absolute;
-  left: 94.5%;
-  bottom: 10%;
-}
-
-.bars-style {
-  color: #F7FFF2;
-  font-size: 22px;
-}
-
-.bars-style:hover {
-  color: #9E5218;
-}
-
-.menu-style {
-  background-color: #F7FFF2;
-}
-
-.dropdown-item {
-  font-weight: 600;
+.navbar-light .navbar-toggler{
   color: #3A6E21;
-}
-
-.home-icon {
-  margin-left: 51px;
-}
-
-.about-icon {
-  margin-left: 24px;
-}
-
-.contact-icon {
-  margin-left: 15px;
-}
-
-a {
-  color: #3A6E21;
-}
-
-a:hover {
-  color: #9E5218;
 }
 
 .logo-style {
-  padding-top: 1%;
-  width: 3%;
+  width: 5%;
+}
+
+.navbar-brand {
+  color: #3A6E21;
+  margin: 0;
+}
+
+.links {
+  color: white;
+  margin: 1rem;
+}
+
+.links-button {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1rem;
+  padding: 0.5rem 2rem;
+  color: white;
 }
 
 .left-side {
@@ -132,51 +120,50 @@ input, .signin-button {
   margin-left: 1.3%;
 }
 
-@media (max-width: 1024px){
-  .vermi-img {
+@media (max-width: 1351px){
+  .vermi-img{
+    width: 80%;
+  }
+}
+
+@media (max-width: 1291px) {
+  .vermi-img{
     width: 70%;
-    margin-top: 30%;
-    margin-left: 15%;
-  }
-
-  .name-label,.password-label{
-    padding-right: 35%;
-  }
-
-  .footer-style{
-    margin-bottom: 0px;
-    padding-top: 35px;
+    margin-top: 20%;
   }
 }
 
-@media (max-width: 768px){
+@media (max-width: 992px) {
   body{
-    background-size: cover;
+    background-image: none !important;
+    background-color: #F7FFF2;
   }
-
-  .navbar{
-    background-color: #5AB862;
+  .bars-style {
+    color: #3A6E21;
+    font-size: 22px;
   }
-
-  .logo-style{
-    width: 5%;
-  }
-
-  .navbar-brand{
-    color: #F7FFF2;
-  }
-
-  .welcome-text{
-    margin-top: 50px;
-  }
-}
-
-@media (max-width: 425px){
-  .welcome-text {
-    padding-top: 50px;
-  }
-
   .vermi-img{
     display: none;
+  }
+  ul.navbar-nav.ml-auto {
+    text-align: center;
+  }
+}
+
+@media (max-width: 770px) {
+  .left-side{
+    margin-top: 20%;
+  }
+}
+
+@media (max-width: 551px) {
+  .left-side{
+    margin-top: 30%;
+  }
+}
+
+@media (max-width: 462px) {
+  .footer-style{
+    text-align: center;
   }
 }

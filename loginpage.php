@@ -28,8 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Fetch the data from the database
  
     if (sqlsrv_has_rows($result) ) {
-        header("Location: dashboard.php");
-        exit();
+      $_SESSION["form_id_log"] = $form_id_log;
+      header("Location: dashboard.php");
+      exit();
     } else {
         $loginerr ='<span style="color:red;">Invalid Username/Password.</span>';
     }
@@ -60,25 +61,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
   <section id="title">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-style">
-      <img src="images/vmwlogo.png" alt="logo.png" class="logo-style"><a href="index.html" class="navbar-brand">VermiWeb</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark navbar-style">
+      <img src="images/vmwlogo.png" alt="logo.png" class="logo-style"><a href="index.php" class="navbar-brand">VermiWeb</a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse threebars-style" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-style" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa-solid fa-bars bars-style"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right text-right menu-style" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="index.php">Home<i class="fa-solid fa-house home-icon"></i></a>
-              <a class="dropdown-item" href="index.php#about">About Us<i class="fa-solid fa-user-group about-icon"></i></a>
-              <a class="dropdown-item" href="index.php#footer">Contact Us<i class="fa-solid fa-address-book contact-icon"></i></a>
-            </div>
+      <div class="navbar-collapse collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-list active">
+            <a class="nav-link links" href="index.php">Home</a>
+          </li>
+          <li class="nav-list active">
+            <a class="nav-link links" href="index.php#testimonials">Vermicomposting</a>
+          </li>
+          <li class="nav-list active">
+            <a class="nav-link links" href="index.php#about">About Us</a>
+          </li>
+          <li class="nav-list active">
+            <a class="nav-link links" href="index.php#footer">Contact Us</a>
           </li>
         </ul>
       </div>
     </nav>
+
     <div class="row">
       <div class="col-lg-6 col-m-12 col-sm-12 left-side">
         <h1 class="welcome-text">Login</h1> 
@@ -105,11 +110,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
           <br><br>
           
-         <p>Do you have an account? <a href = "signup.php" class="signup-text">Sign Up</a></p> <!--DAT DITO YUNG FORGOT SIGNUP NA PHP FILE-->
+         <p>Do you have an account? <a href = "signup.php" class="signup-text">Sign Up</a></p>
         </form>
         
       </div>
-      <div class="col-lg-6 col-m-12 col-sm-12">
+      <div class="col-lg-6 col-m-12 col-sm-12 right-side">
         <div>
           <img class="vermi-img" src="images/mainpageimage.png" alt="vermicomposting.png">
         </div>

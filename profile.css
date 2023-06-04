@@ -1,41 +1,9 @@
 /* DASHBOARD */
 body {
   font-family: 'Mulish', sans-serif;
-  background-image: url(images/dashboardbackground.jpg);
-  background-size: cover;
+  background-color: #F7FFF2;
   overflow-x: hidden;
   text-decoration: none;
-}
-
-ul { /* Vertical Navbar Design */
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 25%;
-  background-color: #5AB862;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
-
-li a { /* Vertical Navbar Design Each*/
-  display: block;
-  color: #F7FFF2;
-  padding: 20px 16px;
-  text-decoration: none;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-li a.active { /* Vertical Navbar Design Each when Active */
-  background-color: #F7FFF2;
-  color: #284D17;
-}
-
-li a:hover:not(.active) { /* Vertical Navbar Design Each when not Active */
-  background-color: #F7FFF2;
-  color: #284D17;
 }
 
 .logo-style { /* Navbar Logo */
@@ -64,8 +32,40 @@ li a:hover:not(.active) { /* Vertical Navbar Design Each when not Active */
   margin-top: 10%;
 }
 
+ul { /* Vertical Navbar Design */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #5AB862;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a { /* Vertical Navbar Design Each*/
+  display: block;
+  color: #F7FFF2;
+  padding: 20px 16px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+li a.active { /* Vertical Navbar Design Each when Active */
+  background-color: #F7FFF2;
+  color: #284D17;
+  text-decoration: underline;
+}
+
+li a:hover:not(.active) { /* Vertical Navbar Design Each when not Active */
+  background-color: #F7FFF2;
+  color: #284D17;
+}
+
 .tabcontent { /* The content of each tab */
-  position: absolute;
+  display: block;
   padding: 0px 12px;
   width: 70%;
   border-left: none;
@@ -73,16 +73,15 @@ li a:hover:not(.active) { /* Vertical Navbar Design Each when not Active */
 }
 
 .dashboard-text{ /* Dashboard Top Name */
-  margin-top: 5.5%;
-  margin-bottom: 9%;
+  padding-top: 10%;
+  margin-bottom: 3%;
   font-weight: 700;
-  color: #F7FFF2;
+  color: #3A6E21;
 }
 
 .dropdown-style{ /* Notification Bell Icon */
-  position: absolute;
-  top: 5%;
-  right: 1%;
+  float: right;
+  margin-top: 7%;
   color: #3A6E21;
   font-size: 35px;
   height: 52px;
@@ -118,21 +117,15 @@ th { /* Notification Message Design */
 }
 
 .info-row{
+  padding-left: 4%;
   padding-top: 7%;
-}
-
-.profile-img{
-  float: left;
-  width: 40%;
-  margin-right: 20px;
-  border-radius: 50%;
 }
 
 .profile-name{
   text-decoration: underline;
 }
 
-.profile-work{
+.profile-email{
   margin-top: 8%;
 }
 
@@ -156,4 +149,241 @@ th { /* Notification Message Design */
 
 .edit-button{
   margin-top: 2%;
+}
+
+@media (max-width: 1421px) {
+  .card-title{
+    font-size: 25px;
+  }
+  .card-text{
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 1375px) {
+  .card-title{
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1251px) {
+  .card-deck{
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 1198px) {
+  .brand-li{
+    text-align: center;
+  }
+  .logo-style{
+    width: 10%;
+    margin-left: 0;
+  }
+  .navbar-brand{
+    font-size: 20px;
+  }
+  .brand-li{
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 1178px) {
+  .card-title{
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1093px) {
+  .card-title{
+    font-size: 15px;
+  }
+  .card-text{
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 1072px) {
+  .card-text{
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard-text{
+    margin-top: 15%;
+  }
+
+}
+
+@media (max-width: 1021px) {
+  .hello-text{
+    font-size: 25px;
+  }
+  .dashboard-text{
+    margin-top: 20%;
+  }
+  .dropdown-style{
+    margin-top: 15%;
+  }
+}
+
+@media (max-width: 992px) {
+  .card-title{
+    font-size: 25px;
+  }
+  .card-text{
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 878px) {
+  .card-title{
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 769px) {
+  .hello-text{
+    font-size: 20px;
+  }
+  .card-title{
+    font-size: 19px;
+  }
+  .col-md-6 {
+    width: auto;
+    display: inline-block;
+    float: none;
+  }
+  .div-dropdown{
+    margin-top: 2%;
+    margin-left: 42%;
+  }
+  .bars-style{
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 748px) {
+  .div-dropdown{
+    margin-left: 40%;
+  }
+}
+
+@media (max-width: 722px) {
+  .div-dropdown{
+    margin-left: 35%;
+  }
+}
+
+@media (max-width: 666px) {
+  .div-dropdown{
+    margin-left: 30%;
+  }
+}
+
+@media (max-width: 618px) {
+  .div-dropdown{
+    margin-left: 25%;
+  }
+}
+
+@media (max-width: 601px) {
+  .hello-text, li a{
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 577px) {
+  .dashboard-text{
+    font-size: 20px;
+    margin-top: 30%;
+  }
+  .div-dropdown{
+    margin-left: 35%;
+  }
+  .bars-style{
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 533px) {
+  .navbar-brand{
+    font-size: 15px;
+  }
+  .brand-li{
+    margin-top: 10%;
+  }
+}
+
+@media (max-width: 550px) {
+  .div-dropdown{
+    margin-left: 30%;
+  }
+}
+
+@media (max-width: 511px) {
+  .div-dropdown{
+    margin-left: 25%;
+  }
+}
+
+@media (max-width: 476px) {
+  .div-dropdown{
+    margin-left: 20%;
+  }
+}
+
+@media (max-width: 445px) {
+  .div-dropdown{
+    margin-left: 15%;
+  }
+}
+
+@media (max-width: 426px) {
+  .logo-style{
+    display: none;
+  }
+  .navbar-brand{
+    font-size: 12px;
+  }
+  .brand-li{
+    margin-left: 15px;
+    margin-top: 15%;
+  }
+  .navbar-brand, .hello-text, li a{
+    font-size: 10px;
+  }
+  .dashboard-text{
+    font-size: 15px;
+    margin-top: 35%;
+  }
+  .bars-style{
+    font-size: 18px;
+  }
+  .div-dropdown{
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .initial-weight, .final-weight, .optimal-soil, .optimal-temp{
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 364px) {
+  .div-dropdown{
+    margin-left: 5%;
+  }
+}
+
+@media (max-width: 329px) {
+  .div-dropdown{
+    margin-left: 1%;
+  }
+}
+
+@media (max-width: 321px) {
+  .brand-li{
+    margin-left: 10px;
+  }
 }

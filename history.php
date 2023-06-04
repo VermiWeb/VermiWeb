@@ -11,7 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
   <!--ICONS-->
-  <script src="https://kit.fontawesome.com/0dbdcb52b2.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/6ad1a3c168.js" crossorigin="anonymous"></script>
   <!--GOOGLE FONTS-->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!--CSS FILE-->
@@ -22,30 +22,36 @@
 
   <section id="title">
     <ul>
-      <li>
+      <li class="brand-li">
         <img src="images/vmwlogo.png" alt="logo.png" class="logo-style">
         <h1 class="navbar-brand">VermiWeb</h1>
       </li>
       <li class="hello-text">Welcome Back!</li>
       <li class="tab-one"><a href="dashboard.php">Dashboard</a></li>
-      <li><a class="active" href="history.php">History</a></li>
-      <li><a href="profile.php">My Profile</a></li>
-      <li><a href="loginpage.php">Logout</a></li>
+      <li class="tab-two"><a class="active" href="history.php">History</a></li>
+      <li class="tab-three"><a href="profile.php">My Profile</a></li>
+      <li class="tab-four"><a href="loginpage.php">Logout</a></li>
     </ul>
   </section>
 
   <section id="content">
     <div id="History" class="tabcontent">
-      <h3 class="dashboard-text">HISTORY</h3>
-      <a class="nav-link dropdown-style" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fa-solid fa-solid fa-bell"></i>
-      </a>
-      <div class="dropdown-menu dropdown-menu-right text-right menu-style" aria-labelledby="navbarDropdownMenuLink">
-        <table>
-          <h4 class="date-notif">Today</h4>
-          <th class="notif-message">Your Compost is ready for harvest!</th>
-        </table>
-      </div>
+      <div class="row">
+          <div class="col-md-6 div-dashboard">
+            <h3 class="dashboard-text">HISTORY</h3>
+          </div>
+          <div class="col-md-6 div-dropdown">
+            <a class="nav-link dropdown-style" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa-solid fa-solid fa-bell bars-style"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right text-right menu-style" aria-labelledby="navbarDropdownMenuLink">
+            <table>
+              <h4 class="date-notif">Today</h4>
+              <th class="notif-message">Your Compost is ready for harvest!</th>
+            </table>
+          </div>
+          </div>
+        </div>
       <table>
         <h4>Today</h4>
         <tr>

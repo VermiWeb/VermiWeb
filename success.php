@@ -14,36 +14,9 @@ if (!$conn) {
   die("Connection failed: " . sqlsrv_errors());
 }
 
-$signUpErr = '';
-
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  // Variable to hold the values
-  $email = isset($_POST['email']) ? $_POST['email'] : "";
-  $username = isset($_POST['username']) ? $_POST['username'] : "";
-  $userpassword = isset($_POST['userpassword']) ? $_POST['userpassword'] : "";
-  $name = isset($_POST['name']) ? $_POST['name'] : "";
-  $phone = isset($_POST['phone']) ? $_POST['phone'] : "";
-
-  // Check if the email already exists in the database
-  $checkQuery = "SELECT * FROM VERMI_WEB WHERE USER_EMAIL = '$email'";
-  $checkStmt = sqlsrv_query($conn, $checkQuery);
-  $existingUser = sqlsrv_fetch_array($checkStmt, SQLSRV_FETCH_ASSOC);
-
-  if ($existingUser) {
-    $signUpErr = "<span style='color:red;'>Email already registered!</span>";
-  } else {
-    // Insert data into the database
-    $sql = "INSERT INTO VERMI_WEB(USER_EMAIL, USER_NAME, USER_PASS, NAME, USER_PHONE) VALUES ('$email', '$username', '$userpassword', '$name', '$phone')";
-    $stmt = sqlsrv_query($conn, $sql);
-    if ($stmt) {
-      echo '<script>alert("Sign-up Successful!")</script>';
-      echo "<script>window.location.href='success.php'</script>";
-    } else {
-      echo "Error";
-    }
-  }
-}
+$sql = "SELECT USER_ID FROM VERMI_WEB WHERE USER_ID=(SELECT IDENT_CURRENT('VERMI_WEB'))";
+$results = sqlsrv_query($conn,$sql);
+$userid = sqlsrv_fetch_array($results);
 
 ?>
 
@@ -64,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <!--GOOGLE FONTS-->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!--CSS FILE-->
-  <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="success.css">
 </head>
 
 <body>
@@ -93,32 +66,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </nav>
     <div class="row">
       <div class="col-lg-6 col-m-12 col-sm-12 left-side">
-        <h1 class="welcome-text">Sign Up</h1>
-
-        <form id="registration"  class= "" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-
-          <label for="" class="name-label">Name:</label><br>
-          <input type="text" id="name" name="name" placeholder="Enter your Name" required><br>
-
-          <label for="" class="phone-label">Phone:</label><br>
-          <input type="text" id="phone" name="phone" placeholder="Enter your Phone Number" required><br>
-
-          <label for="" class="email-label" >Email:</label><br>
-          <input type="text" id= "email" name="email" placeholder="Enter your Email" required><br>
-
-          <label for="" class="username-label">Username:</label><br>
-          <input type="text" id= "username" name="username" placeholder="Enter your Username" required><br>
-
-          <label for="" class="password-label">Password:</label><br>
-          <input type="password" id= "userpassword" name="userpassword" placeholder="Enter your Password" required class="password-box"><br>
-
-          <button type="submit" id="regsub" name="regsub" class="signin-button">Sign Up</button><br>
-          <?php echo $signUpErr?>
-        
-          <p>Go back to <a href="loginpage.php" class="signup-text">Login</a></p>
-
-        </form>
-        <p class="footer-style">©️VermiWeb by VermiTeam 2023</p>
+        <h1 class="welcome-text">Registration Successful</h1>
+        <h1>USERID: <?php echo $userid['USER_ID']?></h1>
+        <button id="login-btn" type="button" class="btn btn-success edit-button">Go to Login</button>
+        <script type="text/javascript">
+            document.getElementById("login-btn").onclick = function(){
+            location.href = "loginpage.php";
+        };
+      </script>
       </div>
       
       <div class="col-lg-6 col-m-12 col-sm-12">
@@ -128,6 +83,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       </div>
     </div>
   </section>
+  <br><br><br>
+  <p class="footer-style">©️VermiWeb by VermiTeam 2023</p>
 </body>
 
 </html>

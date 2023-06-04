@@ -121,7 +121,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </div>
   </section>
-  <br><br><br>
   <p class="footer-style">©️VermiWeb by VermiTeam 2023</p>
   </body>
 </html>

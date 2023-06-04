@@ -46,6 +46,7 @@ session_start();
           <li class="nav-list active">
             <a class="nav-link links" href="index.php#footer">Contact Us</a>
           </li>
+          <a href="loginpage.php"><button type="button" class="btn btn-outline-light btn-lg links-button">Log In</button></a>
         </ul>
       </div>
     </nav>
@@ -131,7 +132,6 @@ session_start();
       </div>
     </div>
   </section>
-  <br><br><br>
   <p class="footer-style">©️VermiWeb by VermiTeam 2023</p>
 </body>
 

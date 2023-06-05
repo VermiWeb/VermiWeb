@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <title>Temperature History</title>
+  <title>Weight History</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!--BOOTSTRAP-->
@@ -38,11 +38,11 @@
     <div id="History" class="tabcontent">
       <div class="row">
           <div class="col-md-6 div-dashboard">
-            <h3 class="dashboard-text">TEMPERATURE HISTORY</h3>
+            <h3 class="dashboard-text">WEIGHT HISTORY</h3>
             <div class="value-button">
-              <button class="temp-button" onclick="location.href = 'history.php'">Temperature</button>
-              <button class="moist-button" onclick="location.href = 'historymoist.php'">Moisture</button>
-              <button class="weight-button" onclick="location.href = 'historyweight.php'">Weight</button>
+                <button class="temp-button" onclick="location.href = 'history.php'">Temperature</button>
+                <button class="moist-button" onclick="location.href = 'historymoist.php'">Moisture</button>
+                <button class="weight-button" onclick="location.href = 'historyweight.php'">Weight</button>
             </div>
           </div>
           <div class="col-md-6 div-dropdown">
@@ -82,10 +82,10 @@
             $endDate = date('Y-m-d', strtotime($endDate . '+1 day'));
 
             // Construct the date filter condition
-            $dateFilter = " WHERE temp_date_time >= '$startDate' AND temp_date_time <= '$endDate'";
+            $dateFilter = " WHERE weight_time_date >= '$startDate' AND weight_time_date <= '$endDate'";
         }
 
-        $sql = "SELECT * FROM tbl_temp" . $dateFilter;
+        $sql = "SELECT * FROM tbl_weight" . $dateFilter;
         $result = mysqli_query($conn, $sql);
 
         if (!$result) {
@@ -106,16 +106,16 @@
       <table>
         <tr>
           <th>DATE AND TIME</th>
-          <th>TEMPERATURE VALUE</th>
+          <th>WEIGHT VALUE</th>
         </tr>
 
         <?php
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-          $fieldname3 = $row['temp_date_time'];
-          $fieldname2 = $row['temp_value'];
+          $fieldname3 = $row['weight_time_date'];
+          $fieldname2 = $row['weight_value'];
           echo '<tr>
                 <td>' . $fieldname3 . '</td>
-                <td>' . $fieldname2 . '</td>
+                <td>' . $fieldname2 . 'kg</td>
             </tr>';
         }
         ?>

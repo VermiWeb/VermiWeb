@@ -116,6 +116,10 @@ th { /* Notification Message Design */
   width: 50%;
 }
 
+.userid-style, .email-style, .username-style, .phone-style{
+  font-weight: 700;
+}
+
 .info-row{
   padding-left: 4%;
   padding-top: 7%;

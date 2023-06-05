@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <title>Temperature History</title>
+  <title>Soil Moisture History</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!--BOOTSTRAP-->
@@ -38,7 +38,7 @@
     <div id="History" class="tabcontent">
       <div class="row">
           <div class="col-md-6 div-dashboard">
-            <h3 class="dashboard-text">TEMPERATURE HISTORY</h3>
+            <h3 class="dashboard-text">MOISTURE HISTORY</h3>
             <div class="value-button">
               <button class="temp-button" onclick="location.href = 'history.php'">Temperature</button>
               <button class="moist-button" onclick="location.href = 'historymoist.php'">Moisture</button>
@@ -57,69 +57,144 @@
           </div>
           </div>
         </div>
-
-        <?php
-        $serverName = "localhost";
-        $database = "vermi";
-        $username = "root";
-        $password = "";
-
-        $conn = mysqli_connect($serverName, $username, $password, $database);
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-
-        // Getting Total List
-        $dateFilter = ""; // Initialize the date filter variable
-
-        if (isset($_GET['start_date']) && isset($_GET['end_date'])) {
-            // Get the start date and end date from the form
-            $startDate = $_GET['start_date'];
-            $endDate = $_GET['end_date'];
-
-            // Format the dates in YYYY-MM-DD format (assuming your database stores dates in this format)
-            $startDate = date('Y-m-d', strtotime($startDate));
-            $endDate = date('Y-m-d', strtotime($endDate . '+1 day'));
-
-            // Construct the date filter condition
-            $dateFilter = " WHERE temp_date_time >= '$startDate' AND temp_date_time <= '$endDate'";
-        }
-
-        $sql = "SELECT * FROM tbl_temp" . $dateFilter;
-        $result = mysqli_query($conn, $sql);
-
-        if (!$result) {
-            die("Query failed: " . mysqli_error($conn));
-        }
-        ?>
-
-        <form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-            <label for="start_date">Start Date:</label>
-            <input type="date" id="start_date" name="start_date" value="<?php echo isset($_GET['start_date']) ? $_GET['start_date'] : ''; ?>">
-
-            <label for="end_date">End Date:</label>
-            <input type="date" id="end_date" name="end_date" value="<?php echo isset($_GET['end_date']) ? $_GET['end_date'] : ''; ?>">
-
-            <input type="submit" value="Filter">
-        </form>
-
       <table>
+        <h4>Hatdog</h4>
         <tr>
-          <th>DATE AND TIME</th>
-          <th>TEMPERATURE VALUE</th>
+          <th>TIME</th>
+          <th>WEIGHT</th>
+          <th>SOIL MOISTURE</th>
+          <th>TEMPERATURE</th>
         </tr>
-
-        <?php
-        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-          $fieldname3 = $row['temp_date_time'];
-          $fieldname2 = $row['temp_value'];
-          echo '<tr>
-                <td>' . $fieldname3 . '</td>
-                <td>' . $fieldname2 . '</td>
-            </tr>';
-        }
-        ?>
-
+        <tr>
+          <td>1:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>2:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>3:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>4:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>5:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>6:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>7:00am</td>
+          <td>100kg</td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>8:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>9:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>10:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+      </table>
+      <br>
+      <table>
+        <h4>Yesterday</h4>
+        <tr>
+          <th>TIME</th>
+          <th>WEIGHT</th>
+          <th>SOIL MOISTURE</th>
+          <th>TEMPERATURE</th>
+        </tr>
+        <tr>
+          <td>1:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>2:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>3:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>4:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>5:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>6:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>7:00am</td>
+          <td>100kg</td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>8:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>9:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
+        <tr>
+          <td>10:00am</td>
+          <td></td>
+          <td>20%</td>
+          <td>21°C</td>
+        </tr>
       </table>
     </div>
   </section>

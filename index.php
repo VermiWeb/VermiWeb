@@ -40,7 +40,7 @@
           <li class="nav-list active">
             <a class="nav-link links" href="#footer">Contact Us</a>
           </li>
-          <a href="loginpage.php"><button type="button" class="btn btn-outline-light btn-lg links-button">Log In</button></a>
+          <button onclick="location.href='loginpage.php'" type="button" class="btn btn-outline-light btn-lg links-button">Log In</button>
         </ul>
       </div>
     </nav>
@@ -134,7 +134,7 @@
         <div class="footer-icons">
           <a href="https://www.facebook.com/vermiteam" class="fa fa-facebook foot-icon-left"></a>
           <a href="https://twitter.com/VermiTeam03" class="fa fa-twitter foot-icon-left"></a>
-          <a href="https://www.instagram.com/imhazeltaylo" class="fa fa-instagram foot-icon-left"></a>
+          <a href="https://www.instagram.com/vermiteam03" class="fa fa-instagram foot-icon-left"></a>
         </div>
       </div>
     </div>

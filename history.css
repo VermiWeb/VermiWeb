@@ -73,9 +73,20 @@ li a:hover:not(.active) { /* Vertical Navbar Design Each when not Active */
 
 .dashboard-text{ /* Dashboard Top Name */
   margin-top: 10%;
-  margin-bottom: 9%;
+  margin-bottom: 2%;
   font-weight: 700;
   color: #284D17;
+}
+
+.value-button{
+  margin-bottom: 5%;
+}
+
+.temp-button, .moist-button, .weight-button{
+  background-color: #3A6E21;
+  color: #F7FFF2;
+  margin-top: 2%;
+  margin-bottom: 3%;
 }
 
 .bars-style{
@@ -131,6 +142,12 @@ h4{
   }
 }
 
+@media (max-width: 1038px) {
+  .dashboard-text{
+    font-size: 25px;
+  }
+}
+
 @media (max-width: 1024px) {
   .dashboard-text{
     margin-top: 15%;
@@ -147,6 +164,12 @@ h4{
   }
   .dropdown-style{
     margin-top: 15%;
+  }
+}
+
+@media (max-width: 935px) {
+  .dashboard-text{
+    font-size: 20px;
   }
 }
 

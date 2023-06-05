@@ -47,7 +47,7 @@ if ($row = sqlsrv_fetch_array($results, SQLSRV_FETCH_ASSOC)) {
 <html lang="en" dir="ltr">
 
 <head>
-    <title>VermiWeb</title>
+    <title>My Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--BOOTSTRAP-->
@@ -121,22 +121,22 @@ if ($row = sqlsrv_fetch_array($results, SQLSRV_FETCH_ASSOC)) {
                         </tr>
                         <tr>
                             <td>
-                                <p>User ID: <?php echo $userid ?></p>
+                                <p><span class="userid-style">User ID: </span><?php echo $userid ?></p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p>Email: <?php echo $email ?></p>
+                                <p><span class="email-style">Email: </span><?php echo $email ?></p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p>Username: <?php echo $username ?></p>
+                                <p><span class="username-style">Username: </span><?php echo $username ?></p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p>Phone Number: <?php echo $phone ?></p>
+                                <p><span class="phone-style">Phone Number: </span><?php echo $phone ?></p>
                             </td>
                         </tr>
                     </table>

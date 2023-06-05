@@ -85,7 +85,7 @@
             $dateFilter = " WHERE temp_date_time >= '$startDate' AND temp_date_time <= '$endDate'";
         }
 
-        $sql = "SELECT * FROM tbl_temp" . $dateFilter;
+        $sql = "SELECT * FROM tbl_temp ORDER BY temp_id DESC" . $dateFilter;
         $result = mysqli_query($conn, $sql);
 
         if (!$result) {

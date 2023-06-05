@@ -150,7 +150,7 @@ if ($row = sqlsrv_fetch_array($results, SQLSRV_FETCH_ASSOC)) {
                   $initialall = $_POST['initialall'];
                   $initialworm = $_POST['initialworm'];
 
-                  $sqlfinal = "UPDATE VERMI_WEB SET INITIAL_WEIGHT=$initialall, FINAL_WEIGHT=(SELECT ($initialall-(((0.75*$initialworm)*7.5))) FROM VERMI_WEB) FROM VERMI_WEB";
+                  $sqlfinal = "UPDATE VERMI_WEB SET INITIAL_WEIGHT=$initialall, FINAL_WEIGHT=($initialall-(((0.75*$initialworm)*7.5))) FROM VERMI_WEB WHERE USER_NAME='$form_id_log'";
                   $results = sqlsrv_query($conn,$sqlfinal);
 
                   if($results){

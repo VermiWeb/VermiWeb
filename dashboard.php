@@ -55,6 +55,62 @@
         </div>
       </div>
 
+      <?php
+      // Connect to the database
+      $serverName = "localhost";
+      $database = "vermi";
+      $username = "root";
+      $password = "";
+
+      $conn = mysqli_connect($serverName, $username, $password, $database);
+      if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
+
+      // Prepare and execute the query
+      $query = "SELECT temp_value FROM tbl_temp ORDER BY temp_id DESC LIMIT 1";
+      $stmt = mysqli_prepare($conn, $query);
+      mysqli_stmt_execute($stmt);
+
+      // Fetch the result
+      $result = mysqli_stmt_get_result($stmt);
+
+      // Check if a row is found
+      if ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+        $temp_value = $row['temp_value'];
+      } else {
+        $temp_value = "Unknown"; // Default value if no result is found
+      }
+      ?>
+
+      <?php
+      // Connect to the database
+      $serverName = "localhost";
+      $database = "vermi";
+      $username = "root";
+      $password = "";
+
+      $conn = mysqli_connect($serverName, $username, $password, $database);
+      if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
+
+      // Prepare and execute the query
+      $query2 = "SELECT weight_value FROM tbl_weight ORDER BY weight_id DESC LIMIT 1";
+      $stmt2 = mysqli_prepare($conn, $query2);
+      mysqli_Stmt_execute($stmt2);
+
+      // Fetch the result
+      $result2 = mysqli_stmt_get_result($stmt2);
+
+      // Check if a row is found
+      if ($row = mysqli_fetch_array($result2, MYSQLI_ASSOC)) {
+        $weight_value = $row['weight_value'];
+      } else {
+        $weight_value = "Unknown"; // Default value if no result is found
+      }
+      ?>
+
       <div class="card-deck">
         <div class="row">
           <div class="col-md-6 col-lg-4">
@@ -62,7 +118,7 @@
               <img class="card-img-top weight-img" src="images/weight.png" alt="weight.png">
               <div class="card-body">
                 <h5 class="card-title">WEIGHT</h5>
-                <p class="card-text">100kg</p>
+                <p class="card-text"><?php echo $weight_value ?>kg</p>
               </div>
             </div>
           </div>
@@ -80,7 +136,7 @@
               <img class="card-img-top temp-img" src="images/temperature.png" alt="temperature.png">
               <div class="card-body">
                 <h5 class="card-title">TEMPERATURE</h5>
-                <p class="card-text">21°C</p>
+                <p class="card-text"><?php echo $temp_value ?>°C</p>
               </div>
             </div>
           </div>

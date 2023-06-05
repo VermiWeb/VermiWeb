@@ -33,14 +33,37 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   if ($existingUser) {
     $signUpErr = "<span style='color:red;'>Email already registered!</span>";
   } else {
-    // Insert data into the database
-    $sql = "INSERT INTO VERMI_WEB(USER_EMAIL, USER_NAME, USER_PASS, NAME, USER_PHONE) VALUES ('$email', '$username', '$userpassword', '$name', '$phone')";
-    $stmt = sqlsrv_query($conn, $sql);
-    if ($stmt) {
-      echo '<script>alert("Sign-up Successful!")</script>';
-      echo "<script>window.location.href='success.php'</script>";
+    // Check if the username already exists in the database
+    $checkQuery = "SELECT * FROM VERMI_WEB WHERE USER_NAME = '$username'";
+    $checkStmt = sqlsrv_query($conn, $checkQuery);
+    $existingUsername = sqlsrv_fetch_array($checkStmt, SQLSRV_FETCH_ASSOC);
+
+    if ($existingUsername) {
+      $signUpErr = "<span style='color:red;'>Username already taken!</span>";
     } else {
-      echo "Error";
+      // Check if the phone number already exists in the database
+      $checkQuery = "SELECT * FROM VERMI_WEB WHERE USER_PHONE = '$phone'";
+      $checkStmt = sqlsrv_query($conn, $checkQuery);
+      $existingPhone = sqlsrv_fetch_array($checkStmt, SQLSRV_FETCH_ASSOC);
+
+      if ($existingPhone) {
+        $signUpErr = "<span style='color:red;'>Phone number already registered!</span>";
+      } else {
+        // Validate phone number
+        if (!preg_match("/^\d{11}$/", $phone)) {
+          $signUpErr = "<span style='color:red;'>Invalid phone number! Phone number should be an 11-digit number.</span>";
+        } else {
+          // Insert data into the database
+          $sql = "INSERT INTO VERMI_WEB(USER_EMAIL, USER_NAME, USER_PASS, NAME, USER_PHONE) VALUES ('$email', '$username', '$userpassword', '$name', '$phone')";
+          $stmt = sqlsrv_query($conn, $sql);
+          if ($stmt) {
+            echo '<script>alert("Sign-up Successful!")</script>';
+            echo "<script>window.location.href='success.php'</script>";
+          } else {
+            echo "Error";
+          }
+        }
+      }
     }
   }
 }

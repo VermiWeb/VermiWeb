@@ -85,7 +85,7 @@
             $dateFilter = " WHERE weight_time_date >= '$startDate' AND weight_time_date <= '$endDate'";
         }
 
-        $sql = "SELECT * FROM tbl_weight" . $dateFilter;
+        $sql = "SELECT * FROM tbl_weight ORDER BY weight_id DESC" . $dateFilter;
         $result = mysqli_query($conn, $sql);
 
         if (!$result) {

@@ -213,19 +213,9 @@ th { /* Notification Message Design */
   }
 }
 
-@media (max-width: 1024px) {
-  .dashboard-text{
-    margin-top: 15%;
-  }
-
-}
-
 @media (max-width: 1021px) {
   .hello-text{
     font-size: 25px;
-  }
-  .dashboard-text{
-    margin-top: 20%;
   }
   .dropdown-style{
     margin-top: 15%;
@@ -301,7 +291,6 @@ th { /* Notification Message Design */
 @media (max-width: 577px) {
   .dashboard-text{
     font-size: 20px;
-    margin-top: 30%;
   }
   .div-dropdown{
     margin-left: 35%;
@@ -360,7 +349,6 @@ th { /* Notification Message Design */
   }
   .dashboard-text{
     font-size: 15px;
-    margin-top: 35%;
   }
   .bars-style{
     font-size: 18px;

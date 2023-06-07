@@ -112,11 +112,11 @@
                   // Compare the data values
                   if (!empty($mssqlData) && !empty($mysqlData) && $mssqlData['FINAL_WEIGHT'] == $mysqlData['weight_value']) {
                     $notifmessage = "Your compost is ready for harvest.";
-                    $_SESSION["notifmessage"] = $notifmessage;
                   }
                   else {
                     $notifmessage = "";
                   }
+                  $_SESSION["notifmessage"] = $notifmessage;                  
                 }
                 else {
                   echo "Failed to connect to MSSQL or MySQL.";

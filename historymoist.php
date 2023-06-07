@@ -89,7 +89,7 @@
           $endDate = date('Y-m-d', strtotime($endDate . '+1 day'));
 
           // Construct the date filter condition
-          $dateFilter = " WHERE moist_time_date >= '$startDate' AND moist_time_date <= '$endDate'";
+          $dateFilter = " WHERE moist_time_date >= '$startDate' AND moist_time_date < '$endDate'";
         }
 
         $sql = "SELECT * FROM tbl_moisture" . $dateFilter;

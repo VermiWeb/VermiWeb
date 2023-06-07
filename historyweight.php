@@ -99,7 +99,7 @@
           $endDate = date('Y-m-d', strtotime($endDate . '+1 day'));
 
           // Construct the date filter condition
-          $dateFilter = " WHERE weight_time_date >= '$startDate' AND weight_time_date <= '$endDate'";
+          $dateFilter = " WHERE weight_time_date >= '$startDate' AND weight_time_date < '$endDate'";
         }
 
         $sql = "SELECT * FROM tbl_weight" . $dateFilter;

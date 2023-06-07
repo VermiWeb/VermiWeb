@@ -166,7 +166,7 @@ else {
 
                         if($results){
                             echo "<script>alert('Successfully Updated!')</script>";
-                            echo "<script>window.location.href='profile.php'</script>";
+                            echo "<script>window.location.href='dashboard.php'</script>";
                         }
                         else{
                             echo "Error.";

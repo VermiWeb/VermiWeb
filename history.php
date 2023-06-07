@@ -70,6 +70,7 @@
               session_start();
               // Start the session and access the session variable
               $notifmessage = isset($_SESSION['notifmessage']) ? $_SESSION['notifmessage'] : '';
+              $notifmessage1 = isset($_SESSION['notifmessage1']) ? $_SESSION['notifmessage1'] : '';
               ?>
               
               <th class="notif-message"><?php echo $notifmessage ?></th>
@@ -102,7 +103,7 @@
         $endDate = date('Y-m-d', strtotime($endDate . '+1 day'));
 
         // Construct the date filter condition
-        $dateFilter = " WHERE temp_date_time >= '$startDate' AND temp_date_time <= '$endDate'";
+        $dateFilter = " WHERE temp_date_time >= '$startDate' AND temp_date_time < '$endDate'";
       }
 
       $sql = "SELECT * FROM tbl_temp" . $dateFilter;

@@ -81,7 +81,7 @@
 
       <?php
       $serverName = "localhost";
-      $database = "vermi";
+      $database = "db_esp32";
       $username = "root";
       $password = "";
 

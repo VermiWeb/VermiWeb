@@ -73,7 +73,7 @@
                 $mysqlServer = 'localhost';
                 $mysqlUsername = 'root';
                 $mysqlPassword = '';
-                $mysqlDatabase = 'vermi';
+                $mysqlDatabase = 'db_esp32';
 
                 // Create MSSQL connection
                 $mssqlConn = sqlsrv_connect($mssqlServer, array(
@@ -110,7 +110,8 @@
                   }
 
                   // Compare the data values
-                  if (!empty($mssqlData) && !empty($mysqlData) && $mssqlData['FINAL_WEIGHT'] == $mysqlData['weight_value']) {
+                  if (!empty($mssqlData) && !empty($mysqlData) && $mysqlData['weight_value'] <= $mssqlData['FINAL_WEIGHT']) {
+                    echo '<script>alert("Your compost is ready for harvest.")</script>';
                     $notifmessage = "Your compost is ready for harvest.";
                   }
                   else {
@@ -134,7 +135,7 @@
         <?php
         // Connect to the database
         $serverName = "localhost";
-        $database = "vermi";
+        $database = "db_esp32";
         $username = "root";
         $password = "";
 
@@ -165,7 +166,7 @@
         <?php
         // Connect to the database
         $serverName = "localhost";
-        $database = "vermi";
+        $database = "db_esp32";
         $username = "root";
         $password = "";
 
@@ -196,7 +197,7 @@
         <?php
         // Connect to the database
         $serverName = "localhost";
-        $database = "vermi";
+        $database = "db_esp32";
         $username = "root";
         $password = "";
 
